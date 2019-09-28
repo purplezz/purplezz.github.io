@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="李壮壮">
 <meta property="og:description" content="Javascript数组常用方法汇总！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-27T10:15:36.379Z">
+<meta property="og:updated_time" content="2019-09-28T08:04:26.783Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组方法">
 <meta name="twitter:description" content="Javascript数组常用方法汇总！">
@@ -412,7 +412,25 @@
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 多个参数</span></span><br><span class="line"><span class="keyword">var</span> arr =[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.splice(<span class="number">3</span>, <span class="number">2</span>,<span class="string">'a'</span>, <span class="string">'b'</span>));     <span class="comment">// [4, 5]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);           <span class="comment">// [1, 2, 3, "a", "b", 6, 7, 8]</span></span><br></pre></td></tr></table></figure>
 
+<h4 id="7-push-和pop"><a href="#7-push-和pop" class="headerlink" title="7.push()和pop()"></a>7.push()和pop()</h4><p>作用：push()在数组末尾添加一个元素或多个元素，pop()删除数组最后一个元素</p>
+<p>注意：</p>
+<ul>
+<li>push()返回值是数组新的长度，原数组会发生改变</li>
+<li>pop()返回值是删除的那个元素，原数组会发生改变</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// push()</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.push(<span class="number">2</span>));   <span class="comment">// 5</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);           <span class="comment">// [6, 7, 8, 9, 2]</span></span><br></pre></td></tr></table></figure>
 
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// pop()</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.pop());   <span class="comment">// 9</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);         <span class="comment">// [6, 7, 8,]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="8-unshift-和shift"><a href="#8-unshift-和shift" class="headerlink" title="8.unshift()和shift()"></a>8.unshift()和shift()</h4><p>作用：unshift()在数组头部添加一个元素或多个元素，shift()删除数组第一个元素</p>
+<p>注意：</p>
+<ul>
+<li>unshift()返回值是数组新的长度，原数组会发生改变</li>
+<li>shift()返回值是删除的那个元素，原数组会发生改变</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// unshift()</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.unshift(<span class="number">3</span>));   <span class="comment">// 5</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);              <span class="comment">// [3, 5, 6, 7, 8,]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// shift()</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.shift());      <span class="comment">// 5</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);              <span class="comment">// [6, 7, 8,]</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -582,7 +600,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#Javascript数组常用方法汇总！"><span class="nav-number">1.</span> <span class="nav-text">Javascript数组常用方法汇总！</span></a></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#1-join"><span class="nav-number"></span> <span class="nav-text">1.join()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-reverse"><span class="nav-number"></span> <span class="nav-text">2.reverse()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-sort"><span class="nav-number"></span> <span class="nav-text">3.sort()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-concat"><span class="nav-number"></span> <span class="nav-text">4.concat()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-slice"><span class="nav-number"></span> <span class="nav-text">5.slice()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-splice"><span class="nav-number"></span> <span class="nav-text">6.splice()</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#Javascript数组常用方法汇总！"><span class="nav-number">1.</span> <span class="nav-text">Javascript数组常用方法汇总！</span></a></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#1-join"><span class="nav-number"></span> <span class="nav-text">1.join()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-reverse"><span class="nav-number"></span> <span class="nav-text">2.reverse()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-sort"><span class="nav-number"></span> <span class="nav-text">3.sort()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-concat"><span class="nav-number"></span> <span class="nav-text">4.concat()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-slice"><span class="nav-number"></span> <span class="nav-text">5.slice()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-splice"><span class="nav-number"></span> <span class="nav-text">6.splice()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-push-和pop"><span class="nav-number"></span> <span class="nav-text">7.push()和pop()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-unshift-和shift"><span class="nav-number"></span> <span class="nav-text">8.unshift()和shift()</span></a></li></div>
             
 
           </div>
