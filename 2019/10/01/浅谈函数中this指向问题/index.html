@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="数据类型,">
+  <meta name="keywords" content="this指向问题,">
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="一，null​null是JavaScript语言的关键字，它表示一个特殊值，常用来描述“空值”，对null执行typeof预算，结果返回字符串”object”；值null 是一个字面量，它不像undefined 是全局对象的一个属性！">
-<meta name="keywords" content="数据类型">
+<meta name="description" content="函数中的this指向问题一直是js中的重点也是一个难点,下面就让我们一起来总结一下吧!">
+<meta name="keywords" content="this指向问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="null和undefined的概述">
-<meta property="og:url" content="https://purplezz.github.io/2019/09/05/null和undefined的概述/index.html">
+<meta property="og:title" content="浅谈函数中this指向问题">
+<meta property="og:url" content="https://purplezz.github.io/2019/10/01/浅谈函数中this指向问题/index.html">
 <meta property="og:site_name" content="李壮壮">
-<meta property="og:description" content="一，null​null是JavaScript语言的关键字，它表示一个特殊值，常用来描述“空值”，对null执行typeof预算，结果返回字符串”object”；值null 是一个字面量，它不像undefined 是全局对象的一个属性！">
+<meta property="og:description" content="函数中的this指向问题一直是js中的重点也是一个难点,下面就让我们一起来总结一下吧!">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-27T10:18:47.408Z">
+<meta property="og:image" content="c:%5CZZ%5Cblog%5Csource%5Cimages%5C001.png">
+<meta property="og:updated_time" content="2019-10-01T14:30:45.664Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="null和undefined的概述">
-<meta name="twitter:description" content="一，null​null是JavaScript语言的关键字，它表示一个特殊值，常用来描述“空值”，对null执行typeof预算，结果返回字符串”object”；值null 是一个字面量，它不像undefined 是全局对象的一个属性！">
+<meta name="twitter:title" content="浅谈函数中this指向问题">
+<meta name="twitter:description" content="函数中的this指向问题一直是js中的重点也是一个难点,下面就让我们一起来总结一下吧!">
+<meta name="twitter:image" content="c:%5CZZ%5Cblog%5Csource%5Cimages%5C001.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://purplezz.github.io/2019/09/05/null和undefined的概述/">
+  <link rel="canonical" href="https://purplezz.github.io/2019/10/01/浅谈函数中this指向问题/">
 
 
 
 
 
-  <title>null和undefined的概述 | 李壮壮</title>
+  <title>浅谈函数中this指向问题 | 李壮壮</title>
   
 
 
@@ -263,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://purplezz.github.io/purplezz.github.io/2019/09/05/null和undefined的概述/">
+    <link itemprop="mainEntityOfPage" href="https://purplezz.github.io/purplezz.github.io/2019/10/01/浅谈函数中this指向问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李壮壮">
@@ -280,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">null和undefined的概述</h1>
+          <h1 class="post-title" itemprop="name headline">浅谈函数中this指向问题</h1>
         
 
         <div class="post-meta">
@@ -292,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-05T18:03:23+08:00">
-                2019-09-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-01T22:23:58+08:00">
+                2019-10-01
               </time>
             
 
@@ -352,34 +354,54 @@
       
 
       
-        <h2 id="一，null"><a href="#一，null" class="headerlink" title="一，null"></a>一，null</h2><p>​null是JavaScript语言的关键字，它表示一个特殊值，常用来描述“空值”，对null执行typeof预算，结果返回字符串”object”；值null 是一个字面量，它不像undefined 是全局对象的一个属性！</p>
-<a id="more"></a>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>        <span class="comment">// "object" </span></span><br><span class="line"><span class="keyword">var</span> a = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">typeof</span>(a);        <span class="comment">// "object"</span></span><br></pre></td></tr></table></figure>
+        <h4 id="函数中的this指向问题一直是js中的重点也是一个难点-下面就让我们一起来总结一下吧"><a href="#函数中的this指向问题一直是js中的重点也是一个难点-下面就让我们一起来总结一下吧" class="headerlink" title="函数中的this指向问题一直是js中的重点也是一个难点,下面就让我们一起来总结一下吧!"></a>函数中的this指向问题一直是js中的重点也是一个难点,下面就让我们一起来总结一下吧!</h4><a id="more"></a>
 
-<h4 id="出现null的情况："><a href="#出现null的情况：" class="headerlink" title="出现null的情况："></a>出现null的情况：</h4><ul>
-<li><p>手动设置变量的值或者对象某一个属性值为null时。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name: <span class="literal">null</span>,</span><br><span class="line">    age: <span class="number">18</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj.name);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在JS的DOM元素获取中，如果没有获取到指定的元素对象，结果一般是null。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;button id=<span class="string">"btn"</span>&gt;我是一个按钮&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        var btn = document.getElementById('abc');   </span></span><br><span class="line"><span class="regexp">        console.log(btn);       /</span><span class="regexp">/  null</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在正则捕获的时候，如果没有捕获到结果，默认也是null。</p>
-<h2 id="二，undefined"><a href="#二，undefined" class="headerlink" title="二，undefined"></a>二，undefined</h2><p>​undefined是全局对象的一个属性。也就是说，它是全局作用域的一个变量。undefined的最初值就是原始数据类型undefined。</p>
-<h4 id="出现undefined的情况"><a href="#出现undefined的情况" class="headerlink" title="出现undefined的情况"></a>出现undefined的情况</h4></li>
-<li><p>变量声明没有赋值返回undefined</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(a);     <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>函数没有返回值时，默认返回undefined</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">fun(<span class="number">1</span>);           <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>调用函数时，应该提供的参数没有提供，返回undefined</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line">fun();           <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>对象没有赋值的属性，该属性的值为undefined</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name: <span class="string">'Andy'</span></span><br><span class="line">&#125;</span><br><span class="line">obj.age;        <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<h4 id="1-普通函数"><a href="#1-普通函数" class="headerlink" title="1.普通函数"></a>1.普通函数</h4><pre><code>// 普通函数
+function fn() {
+  console.log(this);
+}
+fn();   // 打印结果为: window{...}</code></pre><p>结论: 普通函数内部this指向Window</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">特别提醒:</span><br></pre></td></tr></table></figure>
 
-</li>
-</ul>
+<p> ‘use strict’严格模式下this指向undefined</p>
+<h4 id="2-对象的方法"><a href="#2-对象的方法" class="headerlink" title="2.对象的方法"></a>2.对象的方法</h4><pre><code>// 对象的方法
+var obj = {
+    age: 20,
+    sayHi: function() {
+        console.log(this);
+    }
+}
+obj.sayHi();  // 打印结果为: {age: 20, say: ƒ}</code></pre><p>结论: 对象的方法的this指向obj对象</p>
+<h4 id="3-构造函数"><a href="#3-构造函数" class="headerlink" title="3.构造函数"></a>3.构造函数</h4><pre><code>// 构造函数
+function Star() {
+    console.log(this);  // Star {}
+};
+var andy = new Star();</code></pre><p>结论: 构造函数this指向andy这个实例对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">特别提醒:</span><br></pre></td></tr></table></figure>
+
+<p>严格模式下,如果 构造函数不加new调用, this 指向的是undefined,如果给他赋值则会报错!</p>
+<h4 id="4-绑定事件函数"><a href="#4-绑定事件函数" class="headerlink" title="4.绑定事件函数"></a>4.绑定事件函数</h4><pre><code>// 绑定事件函数
+var btn = document.querySelector(&apos;button&apos;);
+btn.onclick = function() {
+    console.dir(this);
+};  // 打印结果: button</code></pre><p>结论: 绑定事件函数this指向的是函数的调用者 也就是btn这个按钮对象</p>
+<h4 id="5-定时器函数"><a href="#5-定时器函数" class="headerlink" title="5.定时器函数"></a>5.定时器函数</h4><pre><code>// 定时器函数
+window.setTimeout(function() {
+    console.log(this);
+}, 1000);  // 打印结果: window</code></pre><p>结论: 定时器函数中this指向也是window</p>
+<h4 id="6-立即执行函数"><a href="#6-立即执行函数" class="headerlink" title="6.立即执行函数"></a>6.立即执行函数</h4><pre><code>// 立即执行函数
+(function() {
+    console.log(this);
+})();  // 打印结果: window</code></pre><p>结论: 立即执行函数中的this也是指向window</p>
+<h4 id="7-箭头函数"><a href="#7-箭头函数" class="headerlink" title="7.箭头函数"></a>7.箭头函数</h4><pre><code>// 箭头函数
+var obj = {
+    sayHi: () =&gt; {
+    console.log(this.age);
+    }
+}
+obj.sayHi();  // window</code></pre><p>结论: 箭头函数没有自己的this，看其外层的是否有函数，如果有，外层函数的this就是内部箭头函数的this，如果没有，则this是window.</p>
+<h4 id="8-如何寻找函数中的this"><a href="#8-如何寻找函数中的this" class="headerlink" title="8.如何寻找函数中的this"></a>8.如何寻找函数中的this</h4><p>关于如何寻找函数中的this,我用一张图来说明!</p>
+<p><img src="C:%5CZZ%5Cblog%5Csource%5Cimages%5C001.png" alt="001"></p>
 
       
     </div>
@@ -397,7 +419,7 @@
       
         <div class="post-tags">
           
-            <a href="/purplezz.github.io/tags/数据类型/" rel="tag"># 数据类型</a>
+            <a href="/purplezz.github.io/tags/this指向问题/" rel="tag"># this指向问题</a>
           
         </div>
       
@@ -410,8 +432,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/purplezz.github.io/2019/09/03/严格模式/" rel="next" title="严格模式" use strict"">
-                <i class="fa fa-chevron-left"></i> 严格模式"use strict"
+              <a href="/purplezz.github.io/2019/10/01/forEach()与map()的对比/" rel="next" title="forEach()与map()的对比">
+                <i class="fa fa-chevron-left"></i> forEach()与map()的对比
               </a>
             
           </div>
@@ -419,10 +441,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/purplezz.github.io/2019/09/25/笔记/" rel="prev" title="笔记">
-                笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -580,7 +598,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一，null"><span class="nav-number">1.</span> <span class="nav-text">一，null</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#出现null的情况："><span class="nav-number">1.0.1.</span> <span class="nav-text">出现null的情况：</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#二，undefined"><span class="nav-number">2.</span> <span class="nav-text">二，undefined</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#出现undefined的情况"><span class="nav-number">2.0.1.</span> <span class="nav-text">出现undefined的情况</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数中的this指向问题一直是js中的重点也是一个难点-下面就让我们一起来总结一下吧"><span class="nav-number">1.</span> <span class="nav-text">函数中的this指向问题一直是js中的重点也是一个难点,下面就让我们一起来总结一下吧!</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-普通函数"><span class="nav-number">2.</span> <span class="nav-text">1.普通函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-对象的方法"><span class="nav-number">3.</span> <span class="nav-text">2.对象的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-构造函数"><span class="nav-number">4.</span> <span class="nav-text">3.构造函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-绑定事件函数"><span class="nav-number">5.</span> <span class="nav-text">4.绑定事件函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-定时器函数"><span class="nav-number">6.</span> <span class="nav-text">5.定时器函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-立即执行函数"><span class="nav-number">7.</span> <span class="nav-text">6.立即执行函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-箭头函数"><span class="nav-number">8.</span> <span class="nav-text">7.箭头函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-如何寻找函数中的this"><span class="nav-number">9.</span> <span class="nav-text">8.如何寻找函数中的this</span></a></li></ol></div>
             
 
           </div>
