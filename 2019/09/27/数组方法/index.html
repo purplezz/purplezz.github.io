@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="李壮壮">
 <meta property="og:description" content="Javascript数组常用方法汇总！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-28T08:04:26.783Z">
+<meta property="og:updated_time" content="2019-10-01T01:33:37.253Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组方法">
 <meta name="twitter:description" content="Javascript数组常用方法汇总！">
@@ -364,7 +364,7 @@
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'pink'</span>, <span class="string">'red'</span>, <span class="string">'blue'</span>];</span><br><span class="line">arr.reverse();</span><br><span class="line"><span class="built_in">console</span>.log(arr);  <span class="comment">// ['blue', 'red', 'pink']</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="3-sort"><a href="#3-sort" class="headerlink" title="3.sort()"></a>3.sort()</h4><p>作用：将数组中的元素排序并返回排序后的数组</p>
+<h4 id="3-sort"><a href="#3-sort" class="headerlink" title="3.sort()"></a>3.sort()</h4><p>作用：数组排序</p>
 <p>特点：</p>
 <ul>
 <li>改变原来的数组,返回一个<strong>新数组</strong></li>
@@ -374,7 +374,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数组排序(冒泡排序)</span></span><br><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">13</span>, <span class="number">4</span>, <span class="number">77</span>, <span class="number">1</span>, <span class="number">7</span>];</span><br><span class="line">arr1.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">     <span class="comment">//  return a - b; 升序的顺序排列</span></span><br><span class="line">     <span class="keyword">return</span> b - a; <span class="comment">// 降序的顺序排列</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(arr1); <span class="comment">// [1, 4, 7, 13, 77]</span></span><br></pre></td></tr></table></figure>
 
 <p>注意：如果数组包含undefined元素，它们会被排到数组的尾部</p>
-<h4 id="4-concat"><a href="#4-concat" class="headerlink" title="4.concat()"></a>4.concat()</h4><p>作用：创建并返回一个新数组</p>
+<h4 id="4-concat"><a href="#4-concat" class="headerlink" title="4.concat()"></a>4.concat()</h4><p>作用：数组添加元素</p>
 <p>特点：</p>
 <ul>
 <li>原数组不会发生改变，返回一个新数组</li>
@@ -401,7 +401,7 @@
 <li>若有两个参数X，Y，则表示删除从X位置开始计数，要删除的个数Y的元素</li>
 <li>若出现第三个或者三个以上的参数，则表示要插入数组中的元素，<strong>从第一个参数指定的位置开始插入</strong></li>
 </ul>
-<p>特别注意：</p>
+<p>==特别注意==：</p>
 <ul>
 <li>该方法返回值是删除元素形成的数组</li>
 <li>原始数组会发生改变</li>
@@ -431,6 +431,12 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// unshift()</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.unshift(<span class="number">3</span>));   <span class="comment">// 5</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);              <span class="comment">// [3, 5, 6, 7, 8,]</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// shift()</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.shift());      <span class="comment">// 5</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);              <span class="comment">// [6, 7, 8,]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="9-indexOf"><a href="#9-indexOf" class="headerlink" title="9.indexOf()"></a>9.indexOf()</h4><p>作用：从头至尾查找数组中的元素</p>
+<p>返回值：返回找到的第一个元素的索引，若没有找到就返回-1</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>, <span class="string">'d'</span>, <span class="string">'f'</span>, <span class="string">'e'</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.indexOf(<span class="string">'f'</span>));  <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.indexOf(<span class="string">'h'</span>));  <span class="comment">// -1</span></span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -469,6 +475,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/purplezz.github.io/2019/10/01/forEach()与map()的对比/" rel="prev" title="forEach()与map()的对比">
+                forEach()与map()的对比 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -545,7 +555,7 @@
               
                 <a href="/purplezz.github.io/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -567,7 +577,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/purplezz.github.io/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -600,7 +610,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#Javascript数组常用方法汇总！"><span class="nav-number">1.</span> <span class="nav-text">Javascript数组常用方法汇总！</span></a></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#1-join"><span class="nav-number"></span> <span class="nav-text">1.join()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-reverse"><span class="nav-number"></span> <span class="nav-text">2.reverse()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-sort"><span class="nav-number"></span> <span class="nav-text">3.sort()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-concat"><span class="nav-number"></span> <span class="nav-text">4.concat()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-slice"><span class="nav-number"></span> <span class="nav-text">5.slice()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-splice"><span class="nav-number"></span> <span class="nav-text">6.splice()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-push-和pop"><span class="nav-number"></span> <span class="nav-text">7.push()和pop()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-unshift-和shift"><span class="nav-number"></span> <span class="nav-text">8.unshift()和shift()</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#Javascript数组常用方法汇总！"><span class="nav-number">1.</span> <span class="nav-text">Javascript数组常用方法汇总！</span></a></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#1-join"><span class="nav-number"></span> <span class="nav-text">1.join()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-reverse"><span class="nav-number"></span> <span class="nav-text">2.reverse()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-sort"><span class="nav-number"></span> <span class="nav-text">3.sort()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-concat"><span class="nav-number"></span> <span class="nav-text">4.concat()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-slice"><span class="nav-number"></span> <span class="nav-text">5.slice()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-splice"><span class="nav-number"></span> <span class="nav-text">6.splice()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-push-和pop"><span class="nav-number"></span> <span class="nav-text">7.push()和pop()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-unshift-和shift"><span class="nav-number"></span> <span class="nav-text">8.unshift()和shift()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-indexOf"><span class="nav-number"></span> <span class="nav-text">9.indexOf()</span></a></li></div>
             
 
           </div>
