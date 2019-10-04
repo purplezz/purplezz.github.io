@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8cde14;
+  background: #5444b4;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2676,16 +2676,16 @@ embed {
 }
 .brand {
   border-radius: 5px;
-  background: none;
-  color: #666;
 }
 .btn {
   border-radius: 5px;
 }
 .sidebar {
-  background: url("/images/005.jpg");
+  background: url("/images/005.jpg") no-repeat;
   background-size: 100%;
+background-position
   box-shadow: inset 1px 2px 5px #ccc;
+  background-color: #eeebf2;
 }
 .site-author-name {
   color: #999;
