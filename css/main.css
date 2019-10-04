@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff5b;
+  background: #8cde14;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2663,9 +2663,6 @@ embed {
 .headband {
   height: 0px;
 }
-.header {
-  background: url("/images/003.jpg");
-}
 .post {
   margin-top: 60px;
   margin-bottom: 60px;
@@ -2679,11 +2676,23 @@ embed {
 }
 .brand {
   border-radius: 5px;
+  background: none;
+  color: #666;
 }
 .btn {
   border-radius: 5px;
 }
 .sidebar {
-  background: #fff;
   background: url("/images/005.jpg");
+  background-size: 100%;
+  box-shadow: inset 1px 2px 5px #ccc;
+}
+.site-author-name {
+  color: #999;
+  font-weight: 700;
+}
+.site-author-image {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
 }
