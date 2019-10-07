@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="数据类型,">
+  <meta name="keywords" content="字符串方法,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="null和undefined的概述！">
-<meta name="keywords" content="数据类型">
+<meta name="description" content="Javascript中常用的字符串方法汇总!">
+<meta name="keywords" content="字符串方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="null和undefined的概述">
-<meta property="og:url" content="http://purplezz.github.io/2019/08/01/null和undefined的概述/index.html">
+<meta property="og:title" content="字符串方法">
+<meta property="og:url" content="http://purplezz.github.io/2019/09/27/字符串方法/index.html">
 <meta property="og:site_name" content="Welcome to my blog">
-<meta property="og:description" content="null和undefined的概述！">
+<meta property="og:description" content="Javascript中常用的字符串方法汇总!">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-06T06:52:00.830Z">
+<meta property="og:updated_time" content="2019-10-07T13:28:25.150Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="null和undefined的概述">
-<meta name="twitter:description" content="null和undefined的概述！">
+<meta name="twitter:title" content="字符串方法">
+<meta name="twitter:description" content="Javascript中常用的字符串方法汇总!">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://purplezz.github.io/2019/08/01/null和undefined的概述/">
+  <link rel="canonical" href="http://purplezz.github.io/2019/09/27/字符串方法/">
 
 
 
 
 
-  <title>null和undefined的概述 | Welcome to my blog</title>
+  <title>字符串方法 | Welcome to my blog</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://purplezz.github.io/purplezz.github.io/2019/08/01/null和undefined的概述/">
+    <link itemprop="mainEntityOfPage" href="http://purplezz.github.io/purplezz.github.io/2019/09/27/字符串方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李壮壮">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">null和undefined的概述</h1>
+          <h1 class="post-title" itemprop="name headline">字符串方法</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-01T18:03:23+08:00">
-                2019-08-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-27T00:54:30+08:00">
+                2019-09-27
               </time>
             
 
@@ -352,36 +352,27 @@
       
 
       
-        <p>null和undefined的概述！</p>
+        <p>Javascript中常用的字符串方法汇总!</p>
 <a id="more"></a>
 
-<h2 id="一，null"><a href="#一，null" class="headerlink" title="一，null"></a>一，null</h2><p>​null是JavaScript语言的关键字，它表示一个特殊值，常用来描述“空值”，对null执行typeof预算，结果返回字符串”object”；值null 是一个字面量，它不像undefined 是全局对象的一个属性！</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>        <span class="comment">// "object" </span></span><br><span class="line"><span class="keyword">var</span> a = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">typeof</span>(a);        <span class="comment">// "object"</span></span><br></pre></td></tr></table></figure>
+<h4 id="1-indexOf-‘要查找的字符’-开始的位置"><a href="#1-indexOf-‘要查找的字符’-开始的位置" class="headerlink" title="1.indexOf(‘要查找的字符’, 开始的位置)"></a>1.indexOf(‘要查找的字符’, 开始的位置)</h4><p>1.根据字符返回位置</p>
+<p>2.开始的位置是index的索引号</p>
+<p>3.若找不到返回-1</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数组去重</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> newArr = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (newArr.indexOf(arr[i]) === <span class="number">-1</span>) &#123;</span><br><span class="line">            newArr.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newArr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> demo = unique([<span class="string">'c'</span>, <span class="string">'a'</span>, <span class="string">'z'</span>, <span class="string">'a'</span>, <span class="string">'x'</span>, <span class="string">'a'</span>, <span class="string">'x'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>])</span><br><span class="line"><span class="built_in">console</span>.log(demo); <span class="comment">// c a z x b</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="出现null的情况："><a href="#出现null的情况：" class="headerlink" title="出现null的情况："></a>出现null的情况：</h4><ul>
-<li><p>手动设置变量的值或者对象某一个属性值为null时。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name: <span class="literal">null</span>,</span><br><span class="line">    age: <span class="number">18</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj.name);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在JS的DOM元素获取中，如果没有获取到指定的元素对象，结果一般是null。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;button id=<span class="string">"btn"</span>&gt;我是一个按钮&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        var btn = document.getElementById('abc');   </span></span><br><span class="line"><span class="regexp">        console.log(btn);       /</span><span class="regexp">/  null</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在正则捕获的时候，如果没有捕获到结果，默认也是null。</p>
-<h2 id="二，undefined"><a href="#二，undefined" class="headerlink" title="二，undefined"></a>二，undefined</h2><p>​undefined是全局对象的一个属性。也就是说，它是全局作用域的一个变量。undefined的最初值就是原始数据类型undefined。</p>
-<h4 id="出现undefined的情况"><a href="#出现undefined的情况" class="headerlink" title="出现undefined的情况"></a>出现undefined的情况</h4></li>
-<li><p>变量声明没有赋值返回undefined</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(a);     <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>函数没有返回值时，默认返回undefined</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">fun(<span class="number">1</span>);           <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>调用函数时，应该提供的参数没有提供，返回undefined</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line">fun();           <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>对象没有赋值的属性，该属性的值为undefined</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name: <span class="string">'Andy'</span></span><br><span class="line">&#125;</span><br><span class="line">obj.age;        <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-charAt-index"><a href="#2-charAt-index" class="headerlink" title="2.charAt(index)"></a>2.charAt(index)</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根据位置返回字符</span></span><br><span class="line">        <span class="comment">// 1. charAt(index) 根据位置返回字符</span></span><br><span class="line">        <span class="keyword">var</span> str = <span class="string">'andy'</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(str.charAt(<span class="number">3</span>));</span><br><span class="line">        <span class="comment">// 遍历所有的字符</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; str.length; i++) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(str.charAt(i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 2. charCodeAt(index)  返回相应索引号的字符ASCII值 目的： 判断用户按下了那个键 </span></span><br><span class="line">        <span class="built_in">console</span>.log(str.charCodeAt(<span class="number">0</span>)); <span class="comment">// 97</span></span><br><span class="line">        <span class="comment">// 3. str[index] H5 新增的</span></span><br><span class="line">        <span class="built_in">console</span>.log(str[<span class="number">0</span>]); <span class="comment">// a</span></span><br></pre></td></tr></table></figure>
 
-</li>
-</ul>
+<p>根据位置返回字符</p>
+<h4 id="3-substr-start-length"><a href="#3-substr-start-length" class="headerlink" title="3.substr(start, length)"></a>3.substr(start, length)</h4><p>从start位置开始(索引号),  length取的个数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// substr('截取的起始位置', '截取几个字符');</span></span><br><span class="line"><span class="keyword">var</span> str1 = <span class="string">'改革春风吹满地'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str1.substr(<span class="number">2</span>, <span class="number">2</span>)); <span class="comment">// 春风</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="4-替换字符串replace-‘被替换的字符’-‘替换为的字符’"><a href="#4-替换字符串replace-‘被替换的字符’-‘替换为的字符’" class="headerlink" title="4.替换字符串replace(‘被替换的字符’, ‘替换为的字符’)"></a>4.替换字符串replace(‘被替换的字符’, ‘替换为的字符’)</h4><p>注意: 它只能替换第一个字符  若要实现全部替换可以用下面的方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">'abcoefoxyozzopp'</span>;</span><br><span class="line">        <span class="keyword">while</span> (str1.indexOf(<span class="string">'o'</span>) !== <span class="number">-1</span>) &#123;</span><br><span class="line">            str1 = str1.replace(<span class="string">'o'</span>, <span class="string">'*'</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="built_in">console</span>.log(str1); <span class="comment">// abc*ef*xy*zz*pp</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-字符转换为数组-split-‘分隔符’"><a href="#5-字符转换为数组-split-‘分隔符’" class="headerlink" title="5.字符转换为数组 split(‘分隔符’)"></a>5.字符转换为数组 split(‘分隔符’)</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// split('') 若里面为空'', 则浏览器还是以逗号分隔数组间的元素</span></span><br><span class="line"><span class="keyword">var</span> str2 = <span class="string">'red, pink, blue'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str2.split(<span class="string">','</span>));  <span class="comment">// ["red", "pink", "blue"]</span></span><br><span class="line"><span class="keyword">var</span> str3 = <span class="string">'red&amp;pink&amp;blue'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str3.split(<span class="string">'&amp;'</span>));  <span class="comment">// ["red", "pink", "blue"]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="6-去除首尾空格trim"><a href="#6-去除首尾空格trim" class="headerlink" title="6.去除首尾空格trim()"></a>6.去除首尾空格trim()</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> orig = <span class="string">'   foo  '</span>;</span><br><span class="line"><span class="built_in">console</span>.log(orig.trim());  <span class="comment">// 'foo'</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -399,7 +390,7 @@
       
         <div class="post-tags">
           
-            <a href="/purplezz.github.io/tags/数据类型/" rel="tag"># 数据类型</a>
+            <a href="/purplezz.github.io/tags/字符串方法/" rel="tag"># 字符串方法</a>
           
         </div>
       
@@ -412,15 +403,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/purplezz.github.io/2019/09/25/笔记/" rel="next" title="笔记">
+                <i class="fa fa-chevron-left"></i> 笔记
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/purplezz.github.io/2019/08/05/运算符三等号区别/" rel="prev" title="运算符中“=”, “==”, “===”的区别">
-                运算符中“=”, “==”, “===”的区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -580,7 +571,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一，null"><span class="nav-number">1.</span> <span class="nav-text">一，null</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#出现null的情况："><span class="nav-number">1.0.1.</span> <span class="nav-text">出现null的情况：</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#二，undefined"><span class="nav-number">2.</span> <span class="nav-text">二，undefined</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#出现undefined的情况"><span class="nav-number">2.0.1.</span> <span class="nav-text">出现undefined的情况</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-indexOf-‘要查找的字符’-开始的位置"><span class="nav-number">1.</span> <span class="nav-text">1.indexOf(‘要查找的字符’, 开始的位置)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-charAt-index"><span class="nav-number">2.</span> <span class="nav-text">2.charAt(index)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-substr-start-length"><span class="nav-number">3.</span> <span class="nav-text">3.substr(start, length)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-替换字符串replace-‘被替换的字符’-‘替换为的字符’"><span class="nav-number">4.</span> <span class="nav-text">4.替换字符串replace(‘被替换的字符’, ‘替换为的字符’)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-字符转换为数组-split-‘分隔符’"><span class="nav-number">5.</span> <span class="nav-text">5.字符转换为数组 split(‘分隔符’)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-去除首尾空格trim"><span class="nav-number">6.</span> <span class="nav-text">6.去除首尾空格trim()</span></a></li></ol></div>
             
 
           </div>
