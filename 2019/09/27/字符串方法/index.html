@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Welcome to my blog">
 <meta property="og:description" content="Javascript中常用的字符串方法汇总!">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-07T13:28:25.150Z">
+<meta property="og:updated_time" content="2019-10-07T13:34:15.025Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字符串方法">
 <meta name="twitter:description" content="Javascript中常用的字符串方法汇总!">
@@ -362,7 +362,6 @@
 
 <h4 id="2-charAt-index"><a href="#2-charAt-index" class="headerlink" title="2.charAt(index)"></a>2.charAt(index)</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根据位置返回字符</span></span><br><span class="line">        <span class="comment">// 1. charAt(index) 根据位置返回字符</span></span><br><span class="line">        <span class="keyword">var</span> str = <span class="string">'andy'</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(str.charAt(<span class="number">3</span>));</span><br><span class="line">        <span class="comment">// 遍历所有的字符</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; str.length; i++) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(str.charAt(i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 2. charCodeAt(index)  返回相应索引号的字符ASCII值 目的： 判断用户按下了那个键 </span></span><br><span class="line">        <span class="built_in">console</span>.log(str.charCodeAt(<span class="number">0</span>)); <span class="comment">// 97</span></span><br><span class="line">        <span class="comment">// 3. str[index] H5 新增的</span></span><br><span class="line">        <span class="built_in">console</span>.log(str[<span class="number">0</span>]); <span class="comment">// a</span></span><br></pre></td></tr></table></figure>
 
-<p>根据位置返回字符</p>
 <h4 id="3-substr-start-length"><a href="#3-substr-start-length" class="headerlink" title="3.substr(start, length)"></a>3.substr(start, length)</h4><p>从start位置开始(索引号),  length取的个数</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// substr('截取的起始位置', '截取几个字符');</span></span><br><span class="line"><span class="keyword">var</span> str1 = <span class="string">'改革春风吹满地'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str1.substr(<span class="number">2</span>, <span class="number">2</span>)); <span class="comment">// 春风</span></span><br></pre></td></tr></table></figure>
 
